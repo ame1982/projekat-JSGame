@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loto igra</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Loto igra</h1>
+    <h2>Odaberi 5 brojeva na prvoj ploči.</h2>
+    <div class="position floatfix">
+        <div id="kombinacija">
+           <script>
+            var text = "";
+            for (let i = 1; i <= 45; i++) {
+            text += "<button class=\"loptica\" id=\""+i+"\" onclick='klikniLopticu(" + i + ")'\">" + i + "</button>";
+            }
+            document.getElementById("kombinacija").innerHTML = text;
+           </script>
+        </div>
+        <div id="dobitna">    
+           <script>
+            var ball = "";
+            for (let i = 1; i <= 45; i++) {
+            ball += "<p class=\"ball\">" + i + "</p>";
+            }
+            document.getElementById("dobitna").innerHTML = ball;
+           </script>
+        </div>
+        <div id="results">
+            <div id="kombinacijax"></div>
+            <div id="rezultat"></div>
+            <div id="dobitak"></div>
+        </div>        
+    </div>
+    <button type="button" onclick=ponovo() id="generate" class="clearfix">Nova igra</button>
+    <script src="script.js"></script>
+</body>
+</html>
